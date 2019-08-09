@@ -224,10 +224,15 @@ int wiringPiI2CSetup (const int devId)
 
   rev = piGpioLayout () ;
 
+#ifdef BPI
+  if(bpi_wiringPiSetupI2C(rev, &device) < 0)
+        return wiringPiFailure (WPI_ALMOST, "BPI, NO I2C device defined %s\n", strerror (errno)) ;
+#else
   if (rev == 1)
     device = "/dev/i2c-0" ;
   else
     device = "/dev/i2c-1" ;
+#endif
 
   return wiringPiI2CSetupInterface (device, devId) ;
 }
