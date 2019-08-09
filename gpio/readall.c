@@ -350,9 +350,8 @@ void doReadall (void)
 
   /**/ if ((model == PI_MODEL_A) || (model == PI_MODEL_B))
     abReadall (model, rev) ;
-  else if ((model >= BPI_MODEL_MIN) || (model == PI_MODEL_BP) || (model == PI_MODEL_AP) || (model == PI_MODEL_2) || (model == PI_MODEL_3) || (model == PI_MODEL_ZERO) || (model == PI_MODEL_ZERO_W))
-  else if ((model == PI_MODEL_BP) || (model == PI_MODEL_AP) ||
-	(model == PI_MODEL_2) ||
+  else if ((model >= BPI_MODEL_MIN) || (model == PI_MODEL_BP) ||
+        (model == PI_MODEL_AP) || (model == PI_MODEL_2) ||
 	(model == PI_MODEL_3) || (model == PI_MODEL_3P) ||
 	(model == PI_MODEL_ZERO) || (model == PI_MODEL_ZERO_W))
     piPlusReadall (model) ;

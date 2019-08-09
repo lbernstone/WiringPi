@@ -198,9 +198,9 @@ static volatile unsigned int *gpio ;
 static volatile unsigned int *pwm ;
 static volatile unsigned int *clk ;
 static volatile unsigned int *pads ;
+#endif
 static volatile unsigned int *timer ;
 static volatile unsigned int *timerIrqRaw ;
-#endif
 
 // Export variables for the hardware pointers
 
@@ -431,7 +431,7 @@ static int pinToGpioR2 [64] =
 //	Cope for 2 different board revisions here.
 //	Also add in the P5 connector, so the P5 pins are 3,4,5,6, so 53,54,55,56
 
-ifdef BPI
+#ifdef BPI
 int *physToGpio ;
 #else
 static int *physToGpio ;
@@ -1186,12 +1186,12 @@ void setPadDrive (int group, int value)
 {
   uint32_t wrVal ;
 
-  i#ifdef BPI
+#ifdef BPI
   if(bpi_found == 1) {
     return;
   }
 #endif
-f ((wiringPiMode == WPI_MODE_PINS) || (wiringPiMode == WPI_MODE_PHYS) || (wiringPiMode == WPI_MODE_GPIO))
+if ((wiringPiMode == WPI_MODE_PINS) || (wiringPiMode == WPI_MODE_PHYS) || (wiringPiMode == WPI_MODE_GPIO))
   {
     if ((group < 0) || (group > 2))
       return ;

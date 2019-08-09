@@ -45,7 +45,7 @@
 // Handy defines
 #define BPI 1
 
-#ifdef  BPI
+#ifdef BPI
 #include <wiringPi_bpi.h>
 #endif
 
